@@ -1,4 +1,4 @@
-package com.glk.swgr.controller;
+package com.glk.swgr.sample1.controller;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.glk.swgr.service.UserService;
-import com.glk.swgr.vo.UserVO;
+import com.glk.swgr.sample1.service.UserService;
+import com.glk.swgr.sample1.vo.UserVO;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

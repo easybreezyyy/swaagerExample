@@ -27,9 +27,9 @@ public class SwaggerConfig {
 	                .consumes(getConsumeContentTypes())
 	                .produces(getProduceContentTypes())
 	                .apiInfo(swaggerInfo())
-	                .groupName("Test")
+	                .groupName("Sample1")
 	                .select()
-	                .apis(RequestHandlerSelectors.basePackage("com.glk.swgr.controller"))
+	                .apis(RequestHandlerSelectors.basePackage("com.glk.swgr.sample1.controller"))
 	                .paths(PathSelectors.ant("/**"))
 	                .build()
 	                .useDefaultResponseMessages(false);
@@ -49,8 +49,8 @@ public class SwaggerConfig {
 	  }
 
 	  private ApiInfo swaggerInfo() {
-	    return new ApiInfoBuilder().title("Test API Documentation")
-	                .description("Swagger UI 간단 예제입니다.")
+	    return new ApiInfoBuilder().title("Sample1 API Documentation")
+	                .description("Sample1 - Swagger UI 간단 예제입니다.")
 	                .license("platformDev")
 	                .licenseUrl("https://www.gemvaxlink.com")
 	                .version("1.0")

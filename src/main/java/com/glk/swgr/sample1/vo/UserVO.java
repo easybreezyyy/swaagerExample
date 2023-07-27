@@ -1,4 +1,4 @@
-package com.glk.swgr.vo;
+package com.glk.swgr.sample1.vo;
 
 import lombok.Getter;
 import lombok.Setter;
