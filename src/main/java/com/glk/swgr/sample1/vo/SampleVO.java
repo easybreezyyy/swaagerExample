@@ -11,8 +11,9 @@ import lombok.Data;
 public class SampleVO {
 	
 	@ApiModelProperty(required = true)
-	private String firstName;
+	private String lastName;
 	
 	@ApiModelProperty(required = true)
-	private String lastName;
+	private String firstName;
+	
 }
