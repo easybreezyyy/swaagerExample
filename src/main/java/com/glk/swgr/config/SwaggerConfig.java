@@ -21,19 +21,33 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SwaggerConfig {
 
 	  @Bean
-	  public Docket SwaggerApi(ServletContext servletContext) {
-
-	    return new Docket(DocumentationType.SWAGGER_2)
-	                .consumes(getConsumeContentTypes())
-	                .produces(getProduceContentTypes())
-	                .apiInfo(swaggerInfo())
-	                .groupName("Sample1")
-	                .select()
-	                .apis(RequestHandlerSelectors.basePackage("com.glk.swgr.sample1.controller"))
-	                .paths(PathSelectors.ant("/**"))
-	                .build()
-	                .useDefaultResponseMessages(false);
+	  public Docket Sample1Api(ServletContext servletContext) {
+		  return new Docket(DocumentationType.SWAGGER_2)
+			                .consumes(getConsumeContentTypes())
+			                .produces(getProduceContentTypes())
+			                .apiInfo(swaggerInfo("Sample1"))
+			                .groupName("Sample1 Project")
+			                .select()
+			                .apis(RequestHandlerSelectors.basePackage("com.glk.swgr.sample1.controller"))
+			                .paths(PathSelectors.ant("/**"))
+			                .build()
+			                .useDefaultResponseMessages(false);
 	  }
+	  
+	  @Bean
+	  public Docket Sample2Api(ServletContext servletContext) {
+		  return new Docket(DocumentationType.SWAGGER_2)
+				  .consumes(getConsumeContentTypes())
+				  .produces(getProduceContentTypes())
+				  .apiInfo(swaggerInfo("Sample2"))
+				  .groupName("Sample2 Project")
+				  .select()
+				  .apis(RequestHandlerSelectors.basePackage("com.glk.swgr.sample2.controller"))
+				  .paths(PathSelectors.ant("/**"))
+				  .build()
+				  .useDefaultResponseMessages(false);
+	  }
+
 
 	  private Set<String> getConsumeContentTypes() {
 	      Set<String> consumes = new HashSet<>();
@@ -48,11 +62,9 @@ public class SwaggerConfig {
 	      return produces;
 	  }
 
-	  private ApiInfo swaggerInfo() {
-	    return new ApiInfoBuilder().title("Sample1 API Documentation")
-	                .description("Sample1 - Swagger UI 간단 예제입니다.")
-	                .license("platformDev")
-	                .licenseUrl("https://www.gemvaxlink.com")
+	  private ApiInfo swaggerInfo(String groupName) {
+	    return new ApiInfoBuilder().title(groupName + " API Documentation")
+	                .description(groupName + " description")
 	                .version("1.0")
 	                .build();
 	  }
